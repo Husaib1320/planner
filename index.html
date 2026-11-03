@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>30-Day Discipline Planner</title>
+<style>
+:root{--bg:#fff;--soft:#f7f7f9;--card:#fff;--ink:#0b0b12;--mute:#6b7280;--line:#ececf1;--hero:#0b0b12;--herotx:#fff;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0b0b12;--soft:#14141e;--card:#14141e;--ink:#f5f5f8;--mute:#9a9aae;--line:#262634;--hero:#f5f5f8;--herotx:#0b0b12}}
+:root[data-theme="dark"]{--bg:#0b0b12;--soft:#14141e;--card:#14141e;--ink:#f5f5f8;--mute:#9a9aae;--line:#262634;--hero:#f5f5f8;--herotx:#0b0b12}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,'Segoe UI',sans-serif;line-height:1.6;-webkit-font-smoothing:antialiased}
+main{max-width:920px;margin:0 auto;padding:0 18px 70px}
+.hero{position:relative;text-align:center;padding:84px 10px 60px;overflow:hidden}
+.hero:before,.hero:after{content:"";position:absolute;width:420px;height:420px;border-radius:50%;filter:blur(90px);opacity:.35;z-index:0}
+.hero:before{background:#7b5cff;left:-120px;top:-120px}
+.hero:after{background:#2ec4b6;right:-120px;top:-60px}
+.hero>*{position:relative;z-index:1}
+.pill{display:inline-block;border:1px solid var(--line);background:var(--card);padding:6px 16px;border-radius:99px;font-size:.78rem;font-weight:600;color:var(--mute);box-shadow:0 2px 10px rgba(0,0,0,.05)}
+.hero h1{margin:22px auto 0;font-size:clamp(2.4rem,8vw,4.6rem);line-height:1.02;letter-spacing:-.04em;font-weight:800;max-width:720px}
+.hero h1 span{background:linear-gradient(90deg,#ff6b6b,#ff9f1c,#2ec4b6,#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{margin:20px auto 0;max-width:540px;color:var(--mute);font-size:1.12rem}
+.cta{display:inline-block;margin-top:28px;background:var(--hero);color:var(--herotx);padding:13px 28px;border-radius:99px;font-weight:600;text-decoration:none;box-shadow:0 10px 30px rgba(0,0,0,.2)}
+.stats{display:flex;justify-content:center;gap:34px;margin-top:34px;flex-wrap:wrap}
+.stats div{font-size:.85rem;color:var(--mute)}.stats b{display:block;font-size:1.6rem;color:var(--ink);letter-spacing:-.02em}
+h2{margin:64px 0 6px;font-size:clamp(1.6rem,5vw,2.2rem);letter-spacing:-.03em}
+.lead{color:var(--mute);margin:0 0 22px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:22px;margin-bottom:16px;box-shadow:0 1px 2px rgba(0,0,0,.03),0 12px 32px rgba(0,0,0,.05)}
+.intro{display:grid;grid-template-columns:repeat(auto-fit,minmax(190px,1fr));gap:12px;margin-top:16px}
+.intro div{padding:16px;border-radius:14px;background:var(--soft);border:1px solid var(--line);font-size:.92rem;color:var(--mute)}
+.intro b{display:block;color:var(--ink);margin-bottom:4px}
+.wk{position:relative;background:var(--card);border:1px solid var(--line);border-radius:24px;margin-bottom:22px;overflow:hidden;box-shadow:0 1px 2px rgba(0,0,0,.03),0 18px 44px rgba(0,0,0,.06)}
+.wk:before{content:"";position:absolute;left:0;top:0;right:0;height:5px;background:var(--wc)}
+.wh{padding:28px 24px 8px;position:relative}
+.wh .no{position:absolute;right:18px;top:6px;font-size:6rem;font-weight:900;color:var(--wc);opacity:.1;line-height:1}
+.tag{display:inline-block;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--wc);background:color-mix(in srgb,var(--wc) 12%,transparent);padding:4px 12px;border-radius:99px}
+.wh h3{margin:12px 0 6px;font-size:1.7rem;letter-spacing:-.03em}
+.wh p{margin:0;color:var(--mute);max-width:620px}
+.wb{padding:12px 24px 24px}
+.mission{background:var(--soft);border-left:4px solid var(--wc);border-radius:10px;padding:12px 14px;font-size:.92rem;margin:12px 0 16px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse;width:100%;min-width:440px;font-size:.84rem}
+th{color:var(--mute);font-weight:600}
+th,td{padding:8px 3px;text-align:center;border-bottom:1px solid var(--line)}
+th:first-child,td:first-child{text-align:left;white-space:nowrap;padding-right:10px}
+.tk{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);background:var(--card);cursor:pointer;padding:0;position:relative;transition:transform .15s,border-color .2s,box-shadow .2s}.tk:hover:not(.done){border-color:var(--wc);box-shadow:0 0 0 4px color-mix(in srgb,var(--wc) 18%,transparent)}.tk:active:not(.done){transform:scale(.88)}.tk.done{background:var(--wc);border-color:var(--wc);cursor:default;box-shadow:0 0 14px color-mix(in srgb,var(--wc) 55%,transparent)}.tk.done:after{content:"";position:absolute;left:8px;top:3px;width:6px;height:12px;border:solid #fff;border-width:0 2.5px 2.5px 0;transform:rotate(45deg)}.tk.pop{animation:pop .45s ease}@keyframes pop{0%{transform:scale(.7)}50%{transform:scale(1.3);box-shadow:0 0 28px var(--wc)}100%{transform:scale(1)}}.top{position:sticky;top:env(safe-area-inset-top,0px);z-index:20;display:flex;align-items:center;gap:14px;padding:10px 18px;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(12px);-webkit-backdrop-filter:blur(12px);border-bottom:1px solid var(--line);font-size:.85rem}.top b{white-space:nowrap}.tb{flex:1;height:6px;border-radius:6px;background:var(--line);overflow:hidden}.tb i{display:block;height:100%;width:0;background:linear-gradient(90deg,#ff6b6b,#ff9f1c,#14b8a6,#7b5cff);transition:width .5s}.top span{font-weight:700;min-width:38px;text-align:right}body:before{content:"";position:fixed;inset:0 0 auto;height:env(safe-area-inset-top,0px);background:var(--bg);z-index:30}.reward{margin-top:18px;border-radius:18px;padding:16px 18px;font-size:.9rem;color:var(--mute);background:var(--soft);border:1px dashed var(--line)}.reward.on{border:1px solid var(--wc);background:linear-gradient(135deg,color-mix(in srgb,var(--wc) 16%,var(--card)),var(--card));color:var(--ink);box-shadow:0 12px 34px color-mix(in srgb,var(--wc) 28%,transparent);animation:rise .6s ease}.reward h4{margin:0 0 6px;font-size:1.25rem;letter-spacing:-.02em;color:var(--wc)}.reward p{margin:0 0 10px}.reward q{display:block;font-style:italic;font-weight:600;border-left:3px solid var(--wc);padding-left:12px}@keyframes rise{0%{opacity:0;transform:translateY(14px)}100%{opacity:1;transform:none}}.lock{display:inline-flex;gap:6px;align-items:center;margin-top:16px;font-size:.8rem;color:var(--mute);border:1px dashed var(--line);padding:5px 12px;border-radius:99px}
+.score{display:flex;align-items:center;gap:14px;margin-top:18px}
+.score .n{font-size:2rem;font-weight:800;min-width:84px;letter-spacing:-.03em}
+.bar{flex:1;height:10px;background:var(--line);border-radius:8px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:8px;transition:width .5s;background:var(--wc)}
+.msg{margin-top:8px;font-size:.92rem;color:var(--mute)}
+.reflect{display:grid;grid-template-columns:repeat(auto-fit,minmax(210px,1fr));gap:10px;margin-top:14px}
+.reflect div{border:1.5px dashed var(--line);border-radius:14px;padding:12px;font-size:.85rem;color:var(--mute);min-height:70px}
+.chart{display:flex;align-items:flex-end;gap:16px;height:230px;padding:10px 6px 0;border-bottom:1px solid var(--line)}
+.col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%}
+.col .b{width:100%;max-width:96px;border-radius:14px 14px 0 0;min-height:4px;transition:height .6s}
+.col span{font-weight:800;margin-bottom:6px}
+.lab{display:flex;gap:16px;padding:8px 6px 0}
+.lab div{flex:1;text-align:center;font-size:.82rem;color:var(--mute);font-weight:600}
+.big{position:relative;overflow:hidden;text-align:center;padding:50px 20px;border-radius:28px;background:#0b0b12;color:#fff;box-shadow:0 30px 70px rgba(123,92,255,.35)}
+.big:before{content:"";position:absolute;width:380px;height:380px;border-radius:50%;background:#7b5cff;filter:blur(100px);opacity:.55;left:50%;top:-200px;transform:translateX(-50%)}
+.big>*{position:relative}
+.big .n{font-size:clamp(3.6rem,14vw,6rem);font-weight:900;line-height:1;letter-spacing:-.05em;background:linear-gradient(90deg,#ff9f1c,#ff6b6b,#7b5cff);-webkit-background-clip:text;background-clip:text;color:transparent}
+.big .lv{display:inline-block;margin-top:14px;border:1px solid rgba(255,255,255,.25);padding:6px 18px;border-radius:99px;font-weight:600;font-size:.9rem}
+.big p{margin:14px auto 0;max-width:500px;color:#c9c9d6}
+.badges{display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;margin-top:26px}
+.badges div{text-align:center;padding:14px 6px;border-radius:16px;background:rgba(255,255,255,.07);border:1px solid rgba(255,255,255,.12);font-size:.82rem;opacity:.4;filter:grayscale(1);transition:.3s}
+.badges div.on{opacity:1;filter:none;background:rgba(255,255,255,.14)}
+.badges em{display:block;font-size:1.8rem;font-style:normal}
+.quote{text-align:center;color:var(--mute);margin:56px 10px 0;font-size:1.05rem}
+.price{position:relative;overflow:hidden;text-align:center;padding:40px 22px;border-radius:28px;border:1px solid var(--line);background:var(--card);box-shadow:0 24px 60px rgba(123,92,255,.2)}.price:before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,#ff6b6b,#ff9f1c,#14b8a6,#7b5cff)}.pt{font-weight:700;color:var(--mute);letter-spacing:.06em;text-transform:uppercase;font-size:.78rem}.pn{font-size:clamp(3rem,12vw,4.8rem);font-weight:900;letter-spacing:-.05em;margin:8px 0}.pn small{font-size:1rem;font-weight:600;color:var(--mute);letter-spacing:0}.price ul{list-style:none;padding:0;margin:18px auto 26px;max-width:420px;text-align:left}.price li{padding:7px 0;border-bottom:1px solid var(--line);font-size:.95rem}.price li:before{content:"\2713";color:#14b8a6;font-weight:800;margin-right:10px}
+.code{margin-top:22px;padding-top:18px;border-top:1px solid var(--line)}.code p{margin:0 0 10px;font-size:.88rem;color:var(--mute)}.code input{padding:11px 16px;border-radius:99px;border:1px solid var(--line);background:var(--soft);color:var(--ink);font-size:.95rem;width:210px;max-width:100%}.code button{margin-left:8px;padding:11px 22px;border-radius:99px;border:0;background:var(--hero);color:var(--herotx);font-weight:600;cursor:pointer}body.locked .tk{opacity:.5;cursor:not-allowed}body.locked .tk:hover:not(.done){box-shadow:none;border-color:var(--line)}</style></head><body><div class="top"><b>🎯 30-Day Discipline</b><div class="tb"><i id="tbi"></i></div><span id="tbp">0%</span></div><main>
+
+<section class="hero"><span class="pill">✨ 60 days · 6 habits · 1 new you</span>
+<h1>Become the person who <span>keeps their word.</span></h1>
+<p>A simple 30-day system to build discipline, track your wins every week and watch yourself grow.</p>
+<a class="cta" href="#start">Start your 30 days</a><br><span class="lock" id="hl">🔒 Preview mode. Purchase the planner to unlock your tracking.</span>
+<div class="stats"><div><b>8</b>weekly themes</div><div><b>360</b>habit check-ins</div><div><b>1</b>better you</div></div></section>
+
+<h2 id="start">Welcome, future you</h2>
+<p class="lead">Discipline is not about being perfect. It is about showing up again, even on tired days.</p>
+<div class="card"><p style="margin:0;color:var(--mute)">Every tick you make is a vote for the person you are becoming. Over 30 days you will move through four weeks, each with its own focus. Your score is counted <b style="color:var(--ink)">every week</b> and <b style="color:var(--ink)">for the whole month</b>, and the chart at the end shows how far you have come.</p>
+<div class="intro">
+<div><b>🎯 Step 1</b>Write your one-sentence goal for the month.</div>
+<div><b>✅ Step 2</b>Press a habit when you complete it. Once pressed, it is locked in for good.</div>
+<div><b>📝 Step 3</b>Reflect at the end of each week.</div>
+<div><b>📈 Step 4</b>Watch your charts and celebrate progress.</div></div>
+<p style="margin:16px 0 0;color:var(--mute);font-size:.92rem">My goal this month: ____________________________________________</p></div>
+
+<div id="months"></div>
+
+<h2 id="buy">Get your planner</h2>
+<p class="lead">One simple price. Yours to keep.</p>
+<div class="price"><div class="pt">Complete Discipline Planner</div><div class="pn">$4.99 <small>one-time</small></div>
+<ul><li>2 full months (60 days) of guided discipline</li><li>8 weekly themes with missions</li><li>Weekly and monthly performance scores</li><li>Progress charts and achievement badges</li><li>Permanent lock-in tracking, no cheating</li><li>Motivation message every week you complete</li><li>Month 2 unlocks automatically after Month 1</li></ul>
+<a class="cta" href="#">Get it now for $4.99</a>
+<div class="code"><p id="gm">Already purchased? Enter your access code to unlock your planner.</p><input id="ac" placeholder="Your access code" autocomplete="off"><button id="ab">Unlock</button></div>
+<p class="msg" style="margin-bottom:0">Less than a coffee. It pays you back in discipline.</p></div>
+
+<p class="quote">“You do not rise to the level of your goals. You fall to the level of your systems.”<br>Be proud: you are building yours.</p>
+</main>
+<script>
+var H=["⏰ Wake on time","💪 Move your body","🧠 Deep work (1 hr)","📖 Read 10 pages","📵 No phone first hour","😴 Sleep by 11pm"];
+var M=[
+{n:"Month 1",t:"Build the Foundation",lead:"Four themes, one clear mission each. Complete them in order.",s:1,W:[
+{t:"Foundation",c:"#ff6b6b",l:7,d:"Start small and get your routine in place. Do not chase perfection. Just show up and press the buttons.",m:"Pick a fixed wake time and keep it all week."},
+{t:"Focus",c:"#ff9f1c",l:7,d:"Protect your time. Remove distractions, silence notifications and give your best hours to what matters most.",m:"Do one full hour of deep work with your phone out of reach."},
+{t:"Momentum",c:"#14b8a6",l:7,d:"The habits start to feel natural. Raise the bar by about 10% and push past the comfortable zone.",m:"Add 5 minutes to your exercise and reading."},
+{t:"Identity",c:"#7b5cff",l:9,d:"You are no longer trying to be disciplined. You are becoming that person. Finish strong and lock your habits in for life.",m:"Write who you have become and what you will keep doing."}]},
+{n:"Month 2",t:"Level Up",lead:"Same habits, higher standards. This is where discipline becomes who you are.",s:31,W:[
+{t:"Raise the Standard",c:"#ff6b6b",l:7,d:"You proved you can start. Now you stretch. Every habit gets a little harder, and you get a little stronger.",m:"Stretch every habit by about 15% and keep your wake time fixed."},
+{t:"Deep Mastery",c:"#ff9f1c",l:7,d:"Go deeper, not wider. Pick the work that moves your life forward and give it your very best hours.",m:"Complete two focused work blocks of one hour each, every day."},
+{t:"Resilience",c:"#14b8a6",l:7,d:"Discipline is tested on the hard days. This week you keep your promises when you are tired, busy or bored.",m:"Keep every habit even on your hardest day. No excuses."},
+{t:"Legacy",c:"#7b5cff",l:9,d:"You are finishing two months of kept promises. Turn this into a system you will carry for the rest of your life.",m:"Write the daily system you will keep for the next year."}]}];
+var R=[
+{h:"Week 1 complete. Foundation built. 🏁",p:"You started when it would have been easy to wait. Seven days of kept promises is not small. It is proof that you can trust yourself. The hardest part is behind you, and everything from here stands on this foundation.",q:"Starting is a skill. You just proved you have it."},
+{h:"Week 2 complete. You own your focus. 🎯",p:"While others scroll, you protected your time and did the work that matters. That is the habit of high performers. Your attention is now your strongest asset, so guard it.",q:"Where your focus goes, your future follows."},
+{h:"Week 3 complete. Momentum is yours. 🚀",p:"You raised the bar and met it. This is the week most people quit, and you did not. The habits are now carrying you as much as you are carrying them.",q:"Discipline is a promise to your future self, and you kept it."},
+{h:"Month 1 complete. You are a different person. 👑",p:"You finished all 30 days with your word intact. Not through luck or mood, but through decisions repeated every single day. Be proud. You did not just complete a planner, you built an identity. Month 2 is now unlocked.",q:"You are now the person you were trying to become."},
+{h:"Week 5 complete. The standard is higher. 📈",p:"You stretched yourself and it held. Most people stay comfortable. You chose to grow, and that choice is already changing how you see yourself.",q:"Comfort asks for little. You asked for more."},
+{h:"Week 6 complete. Mastery in motion. 🧠",p:"Depth beats busyness. You gave your best hours to your best work, and it shows. This is how real results are built.",q:"Mastery is just focus, repeated."},
+{h:"Week 7 complete. Unbreakable. 🛡️",p:"You kept your word on the hard days, and those are the days that count. Your discipline no longer depends on how you feel.",q:"Motivation fades. Your character does not."},
+{h:"Two months complete. Unshakeable. 🏆",p:"Sixty days of promises kept. You have built a system, a mindset and proof that you follow through. Take a moment to be genuinely proud, then keep going. This is only the beginning.",q:"You did not find discipline. You built it."}];
+var S={};try{S=JSON.parse(localStorage.getItem("dp3")||"{}")}catch(e){}
+var MO=document.getElementById("months"),out="",wi=0;
+M.forEach(function(mo,mi){var day=mo.s;
+mo.W.forEach(function(w){w.a=day;w.b=day+w.l-1;day=w.b+1;w.i=wi++});
+out+='<section><h2>'+mo.n+': '+mo.t+'</h2><p class="lead">'+mo.lead+'</p>';
+if(mi>0)out+='<div class="reward" id="lk'+mi+'" style="margin:0 0 18px"></div>';
+out+='<div id="mc'+mi+'"'+(mi>0?' hidden':'')+'>';
+mo.W.forEach(function(w){
+out+='<div class="wk" style="--wc:'+w.c+'"><div class="wh"><span class="no">0'+((w.i%4)+1)+'</span><span class="tag">Week '+(w.i+1)+' · Days '+w.a+'–'+w.b+'</span><h3>'+w.t+'</h3><p>'+w.d+'</p></div><div class="wb"><div class="mission">🎯 <b>Weekly mission:</b> '+w.m+'</div><div class="scroll"><table><tr><th>Habit</th>';
+for(var d=w.a;d<=w.b;d++)out+='<th>'+d+'</th>';out+='</tr>';
+H.forEach(function(h,j){out+='<tr><td>'+h+'</td>';for(var d=w.a;d<=w.b;d++){var k=j+"-"+d;out+='<td><button class="tk'+(S[k]?" done":"")+'" data-k="'+k+'"'+(S[k]?' disabled':'')+' aria-label="Day '+d+'"></button></td>'}out+='</tr>'});
+out+='</table></div><div class="score"><div class="n" id="sn'+w.i+'" style="color:'+w.c+'">0%</div><div class="bar"><i id="sb'+w.i+'"></i></div></div><div class="msg" id="sm'+w.i+'"></div><div class="reflect"><div>🌟 My biggest win this week:</div><div>🔧 What I will improve:</div><div>💬 A note to myself:</div></div><div class="reward" id="rw'+w.i+'"></div></div></div>'});
+out+='<h2 style="font-size:1.4rem;margin-top:36px">Weekly progress</h2><div class="card"><div class="chart" id="ch'+mi+'"></div><div class="lab" id="lb'+mi+'"></div><p class="msg" id="tr'+mi+'" style="text-align:center;margin-bottom:0"></p></div>';
+out+='<h2 style="font-size:1.4rem;margin-top:36px">'+mo.n+' score</h2><div class="big"><div class="n" id="mp'+mi+'">0%</div><div class="lv" id="lv'+mi+'">Level 1 · Beginner</div><p id="mm'+mi+'">Your journey starts with one press. Go and earn it!</p><div class="badges" id="bd'+mi+'"></div></div>';
+out+='</div></section>'});
+MO.innerHTML=out;
+function say(p){return p>=90?"🔥 Outstanding! You are unstoppable.":p>=70?"💪 Great work! Your discipline is showing.":p>=40?"🌱 Good progress. Keep going, you are growing.":p>0?"🚀 Every start counts. Be proud you began!":"Press your first habit and begin your story."}
+function lvf(m){return m>=90?["Level 5 · Discipline Master","👑 You did it. You are living proof that you keep your word."]:m>=70?["Level 4 · Achiever","🌟 Excellent! You have built habits that will change your life."]:m>=45?["Level 3 · Builder","🏗️ Strong progress. Keep building, you are well on your way."]:m>=15?["Level 2 · Starter","🌱 You have started, and that is the hardest part. Keep going!"]:["Level 1 · Beginner","Your journey starts with one press. Go and earn it!"]}
+function upd(){var gT=0,gA=0;
+M.forEach(function(mo,mi){var tot=0,all=0,P=[];
+mo.W.forEach(function(w){var n=(w.b-w.a+1)*H.length,c=0;
+for(var j=0;j<H.length;j++)for(var d=w.a;d<=w.b;d++)if(S[j+"-"+d])c++;
+var p=Math.round(c/n*100);P.push(p);tot+=c;all+=n;
+document.getElementById("sn"+w.i).textContent=p+"%";document.getElementById("sb"+w.i).style.width=p+"%";document.getElementById("sm"+w.i).textContent=say(p);
+var rw=document.getElementById("rw"+w.i),was=rw.className.indexOf("on")>-1;
+if(p===100){if(!was){rw.className="reward on";rw.innerHTML="<h4>"+R[w.i].h+"</h4><p>"+R[w.i].p+"</p><q>"+R[w.i].q+"</q>"}}
+else{rw.className="reward";rw.innerHTML="🔒 <b>Week "+(w.i+1)+" message locked.</b> Complete all "+n+" habits to unlock it ("+(n-c)+" to go)."}});
+mo.tot=tot;mo.all=all;mo.done=(tot===all);
+var ch="",lb="";P.forEach(function(p,i){var w=mo.W[i];ch+='<div class="col"><span style="color:'+w.c+'">'+p+'%</span><div class="b" style="height:'+(p*1.6)+'px;background:linear-gradient(180deg,'+w.c+','+w.c+'88)"></div></div>';lb+='<div>Week '+(w.i+1)+'<br>'+w.t+'</div>'});
+document.getElementById("ch"+mi).innerHTML=ch;document.getElementById("lb"+mi).innerHTML=lb;
+document.getElementById("tr"+mi).textContent=(P[3]>P[0]&&P[3]>0)?"📈 You are trending up since Week "+(mo.W[0].i+1)+". That is real growth!":"Fill in your weeks to see your growth trend.";
+var m=Math.round(tot/all*100);mo.pct=m;
+document.getElementById("mp"+mi).textContent=m+"%";var lv=lvf(m);
+document.getElementById("lv"+mi).textContent=lv[0];document.getElementById("mm"+mi).textContent=lv[1];
+var B=[["🥉","Bronze","15%+",15],["🥈","Silver","45%+",45],["🥇","Gold","70%+",70],["💎","Diamond","90%+",90]],bh="";
+B.forEach(function(b){bh+='<div class="'+(m>=b[3]?"on":"")+'"><em>'+b[0]+'</em><b>'+b[1]+'</b><br>'+b[2]+'</div>'});
+document.getElementById("bd"+mi).innerHTML=bh});
+M.forEach(function(mo,mi){var open=(mi===0)||M[mi-1].done;
+if(open){gT+=mo.tot;gA+=mo.all}
+if(mi>0){document.getElementById("mc"+mi).hidden=!open;var lk=document.getElementById("lk"+mi);lk.style.setProperty("--wc","#7b5cff");
+if(open){lk.className="reward on";lk.innerHTML="<h4>🎉 "+mo.n+" unlocked!</h4><p>You finished "+M[mi-1].n+" and earned the next level. Keep the streak alive.</p>"}
+else{lk.className="reward";lk.innerHTML="🔒 <b>"+mo.n+" unlocks automatically</b> when you complete 100% of "+M[mi-1].n+" ("+M[mi-1].pct+"% so far)."}}});
+var g=Math.round(gT/gA*100);document.getElementById("tbp").textContent=g+"%";document.getElementById("tbi").style.width=g+"%"}
+function hsh(t){var h=5381;t=t.trim().toUpperCase();for(var i=0;i<t.length;i++)h=((h<<5)+h+t.charCodeAt(i))>>>0;return h}
+var OK=[1347129871];
+var UNL=false;try{UNL=localStorage.getItem("dp3u")==="1"}catch(e){}
+function setLock(){document.body.classList.toggle("locked",!UNL);document.getElementById("hl").textContent=UNL?"🔒 Every press is permanent. No undo. Only honest wins count.":"🔒 Preview mode. Purchase the planner to unlock your tracking.";var c=document.querySelector(".code");if(c)c.style.display=UNL?"none":""}
+function gate(){var g=document.getElementById("gm");g.textContent="🔒 Purchase the planner to start pressing your habits.";g.style.color="#ff6b6b";document.getElementById("buy").scrollIntoView({behavior:"smooth"})}
+document.getElementById("ab").addEventListener("click",function(){var g=document.getElementById("gm");if(OK.indexOf(hsh(document.getElementById("ac").value))>-1){UNL=true;try{localStorage.setItem("dp3u","1")}catch(e){}setLock();window.scrollTo({top:0,behavior:"smooth"})}else{g.textContent="That code is not valid. Please check your purchase email.";g.style.color="#ff6b6b"}});
+setLock();
+MO.addEventListener("click",function(e){var b=e.target.closest(".tk");if(!b||b.classList.contains("done"))return;if(!UNL){gate();return}var k=b.dataset.k;S[k]=true;try{localStorage.setItem("dp3",JSON.stringify(S))}catch(x){}b.classList.add("done","pop");b.disabled=true;upd()});
+upd();
+</script></body></html>
